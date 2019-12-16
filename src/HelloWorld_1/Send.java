@@ -7,6 +7,8 @@ import com.rabbitmq.client.ConnectionFactory;
 import java.nio.charset.StandardCharsets;
 
 public class Send {
+	
+	//https://www.rabbitmq.com/tutorials/tutorial-one-java.html
 
 	private final static String QUEUE_NAME = "hello";
 
