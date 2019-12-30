@@ -19,7 +19,9 @@ public class Send {
 		//Si quisiéramos conectarnos a un corredor en una máquina diferente, simplemente especificaríamos aquí su nombre o dirección IP.
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost("localhost");
-		try (Connection connection = factory.newConnection(); Channel channel = connection.createChannel()) {
+		
+		try (Connection connection = factory.newConnection(); 
+				Channel channel = connection.createChannel()) {
 			
 			
 			//Luego creamos un canal, que es donde reside la mayor parte de la API para hacer las cosas. 
@@ -31,6 +33,7 @@ public class Send {
 			String message = "Hello World! 2s";
 			channel.basicPublish("", QUEUE_NAME, null, message.getBytes(StandardCharsets.UTF_8));
 			System.out.println(" [x] Sent '" + message + "'");
+			
 		}
 	}
 }

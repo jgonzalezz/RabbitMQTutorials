@@ -9,12 +9,16 @@ public class Recv {
 
 	private final static String QUEUE_NAME = "hello";
 
+	/**
+	 * @param argv
+	 * @throws Exception
+	 */
 	public static void main(String[] argv) throws Exception {
 		//El DefaultConsumer adicional es una clase que implementa la interfaz de consumidor
 		//que usaremos para almacenar los mensajes que nos envía el servidor.
 		//La configuración es la misma que la del publisher; abrimos una conexión y un canal, 
 		//y declaramos la cola desde la que vamos a consumir. 
-		//Tenga en cuenta que esto coincide con la cola a la que Send.java  envía publicaciones.
+		//Tenga en cuenta que esto coincide con la cola a la que Send.java envía publicaciones.
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost("localhost");
 		Connection connection = factory.newConnection();
